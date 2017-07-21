@@ -95,11 +95,19 @@ view: match_jobs {
   measure: sum_number_of_matched_records {
     type: sum
     sql: ${TABLE}.NumberOfMatchedRecords ;;
+    link: {
+      label: "Control Summary"
+      url: "http://localhost:9999/embed/dashboards/demo_cash::cash_control_summary"
+    }
   }
 
   measure: sum_number_of_unmatched_records {
     type: sum
     sql: ${number_of_unmatched_records} ;;
+    link: {
+      label: "Control Summary"
+      url: "http://localhost:9999/embed/dashboards/demo_cash::cash_control_summary"
+    }
   }
 
   measure: sum_number_of_partial_groups {

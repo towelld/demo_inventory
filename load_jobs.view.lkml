@@ -94,6 +94,10 @@ view: load_jobs {
   measure: sum_number_of_loaded_records {
     type: sum
     sql: ${TABLE}.NumberOfLoadedRecords ;;
+    link: {
+      label: "Control Summary"
+      url: "http://localhost:9999/embed/dashboards/demo_cash::cash_control_summary"
+    }
   }
 
 }

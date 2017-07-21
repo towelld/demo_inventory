@@ -18,7 +18,7 @@
     title: Match Status
     left: 0
     top: 0
-    height: 8
+    height: 6
     width: 12
     type: looker_column
     model: demo_inventory
@@ -65,7 +65,7 @@
     title: Records Loaded
     left: 12
     top: 0
-    height: 8
+    height: 6
     width: 12
     type: looker_column
     model: demo_inventory
