@@ -168,3 +168,42 @@
     series_labels:
       match_jobs.sum_number_of_matched_records: Matched
       match_jobs.sum_number_of_unmatched_records: Unmatched
+
+  - name: match_jobs
+    title: Match Jobs
+    left: 12
+    top: 6
+    height: 8
+    width: 12
+    type: table
+    model: demo_inventory
+    explore: match_jobs
+    dimensions: [match_jobs.rec_name, match_jobs.date_time_stamp, match_jobs.number_of_matched_records,
+      match_jobs.number_of_unmatched_records]
+    dynamic_fields:
+    - table_calculation: match_percentage
+      label: Match Percentage
+      expression: "${match_jobs.number_of_matched_records}/(${match_jobs.number_of_matched_records}+${match_jobs.number_of_unmatched_records})"
+      value_format:
+      value_format_name: percent_2
+    filters:
+      match_jobs.rec_name: "-ICE"
+      match_jobs.tenant_token: demo
+    sorts: [match_jobs.date_time_stamp desc]
+    limit: '500'
+    column_limit: '50'
+    query_timezone: America/Los_Angeles
+    show_view_names: false
+    show_row_numbers: false
+    truncate_column_names: false
+    hide_totals: false
+    hide_row_totals: false
+    table_theme: transparent
+    limit_displayed_rows: false
+    enable_conditional_formatting: false
+    conditional_formatting_ignored_fields: []
+    conditional_formatting_include_totals: false
+    conditional_formatting_include_nulls: false
+    conditional_formatting: []
+    series_labels:
+      match_percentage: Match Rate
