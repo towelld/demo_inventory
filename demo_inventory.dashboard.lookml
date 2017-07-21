@@ -12,6 +12,14 @@
     tile_background_color: "#ffffff"
     tile_text_color: "#646569"
 
+  filters:
+  - name: rec_name
+    label: 'Control Name'
+    type: field_filter
+    model: demo_inventory
+    explore: system_status
+    field: system_status.rec_name
+
   elements:
 
   - name: load_status
@@ -26,6 +34,8 @@
     dimensions: [load_jobs.rec_name]
     pivots: [load_jobs.rec_name]
     measures: [load_jobs.sum_number_of_loaded_records]
+    listen:
+      rec_name: system_status.rec_name
     filters:
       load_jobs.tenant_token: demo
     sorts: [load_jobs.rec_name]
@@ -81,6 +91,8 @@
     explore: load_jobs
     dimensions: [load_jobs.rec_name, load_jobs.file_name, load_jobs.date_time_stamp,
       load_jobs.number_of_loaded_records]
+    listen:
+      rec_name: system_status.rec_name
     filters:
       load_jobs.tenant_token: demo
     sorts: [load_jobs.date_time_stamp desc]
@@ -112,6 +124,8 @@
     explore: match_jobs
     dimensions: [match_jobs.rec_name]
     measures: [match_jobs.sum_number_of_matched_records, match_jobs.sum_number_of_unmatched_records]
+    listen:
+      rec_name: system_status.rec_name
     filters:
       match_jobs.rec_name: "-ICE"
       match_jobs.tenant_token: demo
