@@ -80,4 +80,51 @@ view: match_jobs {
     type: count
     drill_fields: [rec_name]
   }
+
+  measure: sum_number_of_matched_groups {
+    type: sum
+    sql: ${TABLE}.NumberOfMatchedGroups ;;
+  }
+
+  measure: sum_number_of_matched_records {
+    type: sum
+    sql: ${TABLE}.NumberOfMatchedRecords ;;
+  }
+
+  measure: sum_number_of_partial_groups {
+    type: sum
+    sql: ${TABLE}.NumberOfPartialGroups ;;
+  }
+
+  measure: sum_number_of_partial_records {
+    type: sum
+    sql: ${TABLE}.NumberOfPartialRecords ;;
+  }
+
+  measure: sum_number_of_records {
+    type: sum
+    sql: ${TABLE}.NumberOfRecords ;;
+  }
+
+  measure: sum_number_of_suggested_groups {
+    type: sum
+    sql: ${TABLE}.NumberOfSuggestedGroups ;;
+  }
+
+  measure: sum_number_of_suggested_records {
+    type: sum
+    sql: ${TABLE}.NumberOfSuggestedRecords ;;
+  }
+
+  measure: sum_duration {
+    type: sum
+    sql: ${TABLE}.Duration ;;
+  }
+
+  measure: sum_duration_seconds {
+    type: sum
+    sql: ${TABLE}.Duration/1000 ;;
+  }
+
+
 }
