@@ -65,6 +65,10 @@ view: match_jobs {
   dimension: rec_name {
     type: string
     sql: ${TABLE}.RecName ;;
+    link: {
+      label: "Control Summary"
+      url: "http://localhost:9999/embed/dashboards/demo_cash::cash_control_summary"
+    }
   }
 
   dimension: rec_operational_cycle {
