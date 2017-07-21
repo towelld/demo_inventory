@@ -13,6 +13,13 @@
     tile_text_color: "#646569"
 
   filters:
+  - name: tenant_token
+    label: 'Control Tenant'
+    type: field_filter
+    model: demo_inventory
+    explore: system_status
+    field: system_status.tenant_token
+    default_value: "demo"
   - name: rec_name
     label: 'Control Name'
     type: field_filter
