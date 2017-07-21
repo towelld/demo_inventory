@@ -21,6 +21,11 @@ view: load_jobs {
     sql: ${TABLE}.LoadDuration ;;
   }
 
+  dimension: load_duration_seconds {
+    type: number
+    sql: ${TABLE}.LoadDuration/1000 ;;
+  }
+
   dimension: load_id {
     type: number
     sql: ${TABLE}.LoadId ;;
@@ -70,4 +75,25 @@ view: load_jobs {
     type: count
     drill_fields: [feed_name, file_name, rec_name]
   }
+
+  measure: sum_load_duration {
+    type: sum
+    sql: ${TABLE}.LoadDuration ;;
+  }
+
+  measure: sum_load_duration_seconds {
+    type: sum
+    sql: ${TABLE}.LoadDuration/1000 ;;
+  }
+
+  measure: sum_number_of_discarded_records {
+    type: sum
+    sql: ${TABLE}.NumberOfDiscardedRecords ;;
+  }
+
+  measure: sum_number_of_loaded_records {
+    type: sum
+    sql: ${TABLE}.NumberOfLoadedRecords ;;
+  }
+
 }
