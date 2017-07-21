@@ -186,6 +186,8 @@
       expression: "${match_jobs.number_of_matched_records}/(${match_jobs.number_of_matched_records}+${match_jobs.number_of_unmatched_records})"
       value_format:
       value_format_name: percent_2
+    listen:
+      rec_name: system_status.rec_name
     filters:
       match_jobs.rec_name: "-ICE"
       match_jobs.tenant_token: demo
