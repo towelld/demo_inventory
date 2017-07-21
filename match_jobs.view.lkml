@@ -2,7 +2,7 @@ view: match_jobs {
   sql_table_name: CtcInventory.MatchJobs ;;
 
   dimension: date_time_stamp {
-    type: string
+    type: date_time
     sql: ${TABLE}.DateTimeStamp ;;
   }
 
