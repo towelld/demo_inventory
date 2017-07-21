@@ -51,6 +51,12 @@ view: match_jobs {
     sql: ${TABLE}.NumberOfSuggestedRecords ;;
   }
 
+  dimension: number_of_unmatched_records {
+    type: number
+    sql: ${TABLE}.NumberOfRecords - ${TABLE}.NumberOfMatchedRecords ;;
+  }
+
+
   dimension: pk {
     type: string
     sql: ${TABLE}.Pk ;;
@@ -89,6 +95,11 @@ view: match_jobs {
   measure: sum_number_of_matched_records {
     type: sum
     sql: ${TABLE}.NumberOfMatchedRecords ;;
+  }
+
+  measure: sum_number_of_unmatched_records {
+    type: sum
+    sql: ${number_of_unmatched_records} ;;
   }
 
   measure: sum_number_of_partial_groups {
