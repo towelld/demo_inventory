@@ -88,7 +88,7 @@
     show_view_names: false
     limit_displayed_rows: false
     y_axis_combined: true
-    show_y_axis_labels: true
+    show_y_axis_labels: false
     show_y_axis_ticks: true
     y_axis_tick_density: default
     y_axis_tick_density_custom: 5
@@ -112,5 +112,7 @@
     conditional_formatting_ignored_fields: []
     conditional_formatting_include_totals: false
     conditional_formatting_include_nulls: false
-    series_types: {}
+    series_types:
+      __FILE: demo_inventory/demo_inventory.dashboard.lookml
+      __LINE_NUM: 115
     hide_legend: false
