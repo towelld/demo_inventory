@@ -70,6 +70,37 @@
       __LINE_NUM: 115
     hide_legend: false
 
+  - name: files_loaded
+    title: Files Loaded
+    left: 0
+    top: 6
+    height: 8
+    width: 12
+    type: table
+    model: demo_inventory
+    explore: load_jobs
+    dimensions: [load_jobs.rec_name, load_jobs.file_name, load_jobs.date_time_stamp,
+      load_jobs.number_of_loaded_records]
+    filters:
+      load_jobs.tenant_token: demo
+    sorts: [load_jobs.date_time_stamp desc]
+    limit: '500'
+    column_limit: '50'
+    query_timezone: America/Los_Angeles
+    show_view_names: false
+    show_row_numbers: false
+    truncate_column_names: false
+    hide_totals: false
+    hide_row_totals: false
+    table_theme: transparent
+    limit_displayed_rows: false
+    enable_conditional_formatting: false
+    conditional_formatting_ignored_fields: []
+    conditional_formatting_include_totals: false
+    conditional_formatting_include_nulls: false
+
+
+
   - name: match_status
     title: Match Status
     left: 12
