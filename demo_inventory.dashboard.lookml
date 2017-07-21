@@ -34,7 +34,7 @@
     left: 0
     top: 0
     height: 6
-    width: 12
+    width: 11
     type: looker_column
     model: demo_inventory
     explore: load_jobs
@@ -92,7 +92,7 @@
     left: 0
     top: 6
     height: 8
-    width: 12
+    width: 11
     type: table
     model: demo_inventory
     explore: load_jobs
@@ -125,7 +125,7 @@
     left: 12
     top: 0
     height: 6
-    width: 12
+    width: 11
     type: looker_column
     model: demo_inventory
     explore: match_jobs
@@ -174,7 +174,7 @@
     left: 12
     top: 6
     height: 8
-    width: 12
+    width: 11
     type: table
     model: demo_inventory
     explore: match_jobs
