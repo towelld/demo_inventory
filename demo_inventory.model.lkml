@@ -9,8 +9,7 @@ include: "*.dashboard"
 explore: load_jobs {
   persist_for: "1 minutes"
   join: system_status {
-    sql_on: ${system_status.tenant_token} = ${load_jobs.tenant_token} and ]
-            ${system_status.rec_name} = ${load_jobs.rec_name};;
+    sql_on: ${system_status.tenant_token} = ${load_jobs.tenant_token} and ${system_status.rec_name} = ${load_jobs.rec_name};;
     relationship: one_to_one
   }
 }
@@ -18,8 +17,7 @@ explore: load_jobs {
 explore: match_jobs {
   persist_for: "1 minutes"
   join: system_status {
-    sql_on: ${system_status.tenant_token} = ${match_jobs.tenant_token} and ]
-      ${system_status.rec_name} = ${match_jobs.rec_name};;
+    sql_on: ${system_status.tenant_token} = ${match_jobs.tenant_token} and ${system_status.rec_name} = ${match_jobs.rec_name};;
     relationship: one_to_one
   }
 }
