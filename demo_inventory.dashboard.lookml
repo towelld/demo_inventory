@@ -20,12 +20,6 @@
     explore: system_status
     field: system_status.tenant_token
     default_value: "cshstk"
-  - name: rec_name
-    label: 'Control'
-    type: field_filter
-    model: demo_inventory
-    explore: system_status
-    field: system_status.rec_name
 
   elements:
 
@@ -42,9 +36,7 @@
     pivots: [load_jobs.rec_name]
     measures: [load_jobs.sum_number_of_loaded_records]
     listen:
-      rec_name: system_status.rec_name
-    filters:
-      load_jobs.tenant_token: demo
+      tenant_token: system_status.tenant_token
     sorts: [load_jobs.rec_name]
     limit: '500'
     column_limit: '50'
@@ -99,9 +91,7 @@
     dimensions: [load_jobs.rec_name, load_jobs.file_name, load_jobs.date_time_stamp,
       load_jobs.number_of_loaded_records]
     listen:
-      rec_name: system_status.rec_name
-    filters:
-      load_jobs.tenant_token: demo
+      tenant_token: system_status.tenant_token
     sorts: [load_jobs.date_time_stamp desc]
     limit: '500'
     column_limit: '50'
@@ -132,10 +122,7 @@
     dimensions: [match_jobs.rec_name]
     measures: [match_jobs.sum_number_of_matched_records, match_jobs.sum_number_of_unmatched_records]
     listen:
-      rec_name: system_status.rec_name
-    filters:
-      match_jobs.rec_name: "-ICE"
-      match_jobs.tenant_token: demo
+      tenant_token: system_status.tenant_token
     sorts: [match_jobs.rec_name]
     limit: '500'
     column_limit: '50'
@@ -187,10 +174,7 @@
       value_format:
       value_format_name: percent_2
     listen:
-      rec_name: system_status.rec_name
-    filters:
-      match_jobs.rec_name: "-ICE"
-      match_jobs.tenant_token: demo
+      tenant_token: system_status.tenant_token
     sorts: [match_jobs.date_time_stamp desc]
     limit: '500'
     column_limit: '50'
