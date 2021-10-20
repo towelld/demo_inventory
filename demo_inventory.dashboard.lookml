@@ -19,7 +19,7 @@
     model: demo_inventory
     explore: system_status
     field: system_status.tenant_token
-    default_value: "demo"
+    default_value: "cshstk"
   - name: rec_name
     label: 'Control'
     type: field_filter
