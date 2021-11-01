@@ -56,7 +56,7 @@ view: load_jobs {
     sql: ${TABLE}.RecName ;;
     link: {
       label: "Control Summary"
-      url: "http://localhost:9999/embed/dashboards/demo_cash::cash_control_summary"
+      url: "https://localhost:9999/embed/dashboards/demo_cash::cash_control_summary"
     }
   }
 
