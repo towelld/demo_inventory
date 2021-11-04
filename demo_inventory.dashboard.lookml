@@ -85,7 +85,7 @@
     top: 6
     height: 8
     width: 11
-    type: table
+    type: looker_grid
     model: demo_inventory
     explore: load_jobs
     dimensions: [load_jobs.rec_name, load_jobs.file_name, load_jobs.date_time_stamp,
@@ -162,7 +162,7 @@
     top: 6
     height: 8
     width: 11
-    type: table
+    type: looker_grid
     model: demo_inventory
     explore: match_jobs
     dimensions: [match_jobs.rec_name, match_jobs.date_time_stamp, match_jobs.number_of_matched_records,
